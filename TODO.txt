@@ -1,0 +1,3 @@
+Make product_name unique
+bill_id as foreign key
+Increment/decrement qnty on purchase/sale

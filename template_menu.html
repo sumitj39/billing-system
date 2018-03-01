@@ -1,0 +1,24 @@
+<link href="templates/css/bootstrap_index.css" rel="stylesheet" type="text/css" media="all" />
+
+<div class="navigation">
+    <span class="menu"><img src="templates/images/menu.png" alt=""/></span>
+    <ul class="nav2">
+        <li><a href="customers.php">CUSTOMERS</a></li>
+        <li><a href="sales.php">SALES</a></li>
+        <li><a href="inventory.php">INVENTORY</a></li>
+        <li><a href="index.php">HOMEPAGE</a></li>
+        <li><a href="purchases.php">PURCHASES</a></li>
+        <li><a href="contact.php">CONTACT</a></li>
+        <li><a href="logout.php">LOGOUT</a></li>
+    </ul>
+    <!-- script for menu -->
+        <script> 
+            $( "span.menu" ).click(function() {
+            $( "ul.nav1" ).slideToggle( 300, function() {
+             // Animation complete.
+            });
+            });
+        </script>
+    <!-- //script for menu -->
+
+</div>
