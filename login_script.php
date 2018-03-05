@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php';
+
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
@@ -16,10 +16,8 @@ $password=$_POST['password'];
 // // To protect MySQL injection for Security purpose
 $username = stripslashes($username);
 $password = stripslashes($password);
-$username = mysql_real_escape_string($username);
-$password = mysql_real_escape_string($password);
 
-$result = mysqli_query($conn,"SELECT * FROM admin WHERE admin_name='" . $password . "'");
+$result = mysqli_query($conn,"SELECT * FROM admin WHERE admin_name='$username'");
 
 	$row  = mysqli_fetch_array($result);
 	if(is_array($row)) {
@@ -27,12 +25,12 @@ $result = mysqli_query($conn,"SELECT * FROM admin WHERE admin_name='" . $passwor
 		echo $hashed_password;
 		if(password_verify($_POST['password'], $hashed_password)) {
 			$_SESSION["login_user"] = $row['admin_name'];
-	header("location: index.php"); 
+		header("location: index.php"); 
 		}
 		else {
 			$error = "Password invalid";
 			echo $error;
-				}
+		}
 	}
 	else {
 echo "Username not found";

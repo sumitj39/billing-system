@@ -48,13 +48,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		<?php require("template_menu.html"); ?>
 			<font color="White"><center><?php
-echo "Hi ";
-echo $_SESSION["login_user"];
 ?></center></font>
 		<div class="banner-info text-center">
 			<h1>WELCOME TO <span>CEW</span></h1>
-			<p>creative & innovative team</p>
-			<div class="view"><a href="#" class="hvr-shutter-in-vertical button">VIEW PROJECTS</a></div>
+			<p>Billing System project</p>
 		</div>
 	</div>
 </div>

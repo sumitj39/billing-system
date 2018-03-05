@@ -1,6 +1,7 @@
 <html>
 <body>
-<?php 
+<?php
+    require "session.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     require ("db_connection.php");
 
@@ -18,7 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             echo("<br>");
         }
         $bill_date = "2010-10-10";
-        $admin_id_result = mysqli_query($conn,"SELECT `admin_id` FROM `admin` LIMIT 1");
+        if(isset($_SESSION["login_user"])){
+            $admin_name = $_SESSION["login_user"];
+            $fetch_admin_query = "SELECT `admin_id` FROM `admin` WHERE admin_name='$admin_name'";
+        }
+        else{
+            $fetch_admin_query = "SELECT `admin_id` FROM `admin` LIMIT 1";
+        }
+        $admin_id_result = mysqli_query($conn,$fetch_admin_query);
         $admin_id = mysqli_fetch_array($admin_id_result, MYSQLI_ASSOC);
         $admin_id = $admin_id['admin_id'];
         $bill_insert_query = "INSERT INTO `bill`(`customer_id`, `admin_id`, `no_of_items`, `bill_date`, `total`)

@@ -4,6 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php
+	require "session.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,6 +76,6 @@ while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
 		</div>
 		
 	</div>
-<script src="js/easyResponsiveTabs.js"></script>
+<script src="templates/js/easyResponsiveTabs.js"></script>
 </body>
 </html>

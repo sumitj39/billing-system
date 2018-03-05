@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "98765432";
+$password = "protected";
 $dbname ="billing-system";
 //create connection
 $conn=mysqli_connect($servername, $username, $password, $dbname);

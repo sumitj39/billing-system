@@ -1,39 +1,3 @@
-<?php
-	if($_SERVER['REQUEST_METHOD'] === 'POST'){
-		do{
-			$errmsg='';
-
-			$username=$_POST['username'];
-			$password = $_POST['password'];
-			$mailid = $_POST['email'];
-			if(empty($username) || empty($password) || empty($mailid)){
-				$errmsg = $errmsg."All fields are mandatory";
-				break;
-			}
-		}while(0);
-
-		$username = stripslashes($username);
-		$password = stripslashes($password);
-		$mailid = stripslashes($mailid);
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-		$query = "INSERT INTO `admin`(`admin_name`, `admin_password`, `admin_email`) VALUES ('$username','$hashed_password','$mailid')";
-
-		require('db_connection.php');
-		$result = mysqli_query($conn, $query);
-		do{
-			if(!$result){
-				$errmsg = $errmsg."Could Not create user. Try again";
-				break;
-			}
-			else{
-				$_SESSION["login_user"] = $username;
-				header("location: index.php");
-				die();
-			}
-		}while(0);
-	}
-?>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -44,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 
 <head>
-    <title>CEW signup</title>
+    <title>Flat UI Web Form Widget and Kit :: w3layouts</title>
     <link href="templates/css/style_login_signup.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -63,25 +27,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="two-login  hvr-float-shadow">
             <div class="two-login-head">
                 <img src="templates/images/top-note.png" alt="" />
-                <h2>Register</h2>
+                <h2>register</h2>
                 <lable></lable>
             </div>
-            <form action="" method="POST">
-				<li style="background:red"> <?php echo $errmsg; ?> </li>
+            <form>
                 <li>
-                    <input type="text" class="text" name = "username" placeholder="Username" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Username';}" required/>
+                    <input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
                 </li>
                 <li>
-                    <input type="password" placeholder="Password" name="password" onfocus="this.placeholder = '';" onblur="if (this.placeholder== '') {this.placeholder = 'Password';}" required/>
+                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
                 </li>
                 <li>
-                    <input type="text" class="text" name='email' Placeholder="E-mail" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'E-mail';}" required/>
+                    <input type="password" value="Confirm Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}">
+                </li>
+                <li>
+                    <input type="text" class="text" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}">
                 </li>
                 <div class="submit two">
                     <input type="submit" onclick="myFunction()" value="SIGN UP">
                 </div>
                 <h5>Already a member ?
-                    <a href="login.php"> Login Here</a>
+                    <a href="#"> Login Here</a>
                 </h5>
             </form>
         </div>

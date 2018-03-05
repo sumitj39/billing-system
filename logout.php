@@ -6,5 +6,5 @@ session_destroy();
 echo "Signed out \n";
 }
 			echo "Redirecting to login...\n";
-			header( "refresh:3;url='login.php'" );
+			header( "refresh:1 ;url='login.php'" );
 ?>

@@ -1,3 +1,7 @@
+<?php
+	require "session.php";
+?>
+
 <html>
 <body>
 <?php 

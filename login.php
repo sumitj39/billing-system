@@ -1,39 +1,116 @@
-<?php include('login_script.php'); ?>
+<?php
 
-<html><head>
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+	require 'db_connection.php';
 
-<title>Trendy Login Forms in Flat Design :: w3layouts</title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
+	session_start();
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$username = stripslashes($username);
+	$password = stripslashes($password);
+	$result = mysqli_query($conn,"SELECT * FROM `admin` WHERE `admin_name`='$username'");
+
+	$errmsg="";
+	if(!result){
+		$errmsg = $errmsg."Incorrect username or password ";
+	}
+	$row  = mysqli_fetch_array($result);
+	$hashed_password=$row['admin_password'];
+	if(password_verify($password, $hashed_password)) {
+		$_SESSION["login_user"] = $username;
+		header("location: index.php"); 
+	}
+	else{
+		$errmsg = $errmsg."Incorrect username or password";
+	}
+}
+?>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>CEW signup</title>
+<link href="templates/css/style_login_signup.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat UI Web Form Widget and Kit,Login Forms,Sign up Forms,Registration Forms,News latter Forms,Elements"./>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</script>
 <!--webfonts-->
-		<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700" rel="stylesheet" type="text/css">
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,700,800" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts-->
 </head>
-<body data-feedly-mini="yes">
-	
-			<div class="login-03">
-		<div class="third-login">
-			<h1>Login </h1>
-			<form class="three" action="" method="post">
+<body>
 
-					<p>Username / Email</p>
-					<li class="base">
-					<input type="text" name="username" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}"><a href="#" class=" icons3 user3"></a>
+<!--/start-login-one-->
+	<div class="login-01">
+		<div class="one-login  hvr-float-shadow">
+			<div class="one-login-head">
+					<img src="templates/images/top-lock.png" alt=""/>
+					<h1>LOGIN</h1>
+					<span></span>
+			</div>
+			<form name = "loginForm" method="POST" action='login.php' onsubmit="required()">
+				<li style="background:red"><?php echo($errmsg);?></li>
+				<div class="p-container">
+							<div class="clear"></div>
+				</div>
+				<li>
+					<input type="text" class="text" name = "username" placeholder="username" required/>
 				</li>
-					<p>Password</p>
-					<li>
-							<input type="password" name="password" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"><a href="#" class=" icons3 lock3"></a>
-					</li>
-
-					<div class="submit-three">
-						<input type="submit" name="submit" onclick="myFunction()" value="Log In"> 
-					</div>
-					<br><br>
-					<a href="signup.php"> <center><strong><h3> Sign up <h3></strong> </center> </a>
-			</form>
-				
+				<li>
+					<input type="password" placeholder="Password" name="password" value="" required/>
+				</li>
+				<div class="p-container">
+							<div class="clear"></div>
+				</div>
+				<div class="submit">
+						<input type="submit" value="SIGN IN" >
+				</div>
+					<h5>Don't have an account ?<a href="signup.php"> Sign Up </a></h5>
+				</form>
 		</div>
-	
 	</div>
-<div id="feedly-mini" title="feedly Mini tookit"></div></body></html>
+	<!--/start-login-two-->
+
+	<!--//End-login-form-->
+	<!--start-copyright-->
+   		<div class="copy-right">
+   			<div class="wrap">
+				<p>Copyright &copy; 2015  All rights  Reserved | Template by &nbsp;<a href="http://w3layouts.com">W3layouts</a></p>
+		</div>
+	</div>
+	<!--//end-copyright-->
+	<script>
+		function required()
+			{
+			var emptUser = document.forms["loginForm"]["username"].value;
+			var emptPass = document.forms["loginForm"]["password"].value;
+			var msg = "";
+
+			if (emptUser == "")
+			{
+				msg += "Please input a username";
+				alert("Input username");
+				return false;
+			}
+			if(emptPass == ""){
+				msg += "Please input a password";
+			}
+			if(msg.length > 0){
+				alert(msg);
+				return false;
+			}
+			else 
+			{
+				return true; 
+			}
+		}
+	</script>
+</body>
+</html>
