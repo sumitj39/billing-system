@@ -288,15 +288,14 @@ ul.resp-tabs-list.hor_1 {
     color: #5acd33;
     padding-right: 1.5em;
 }
-/*.agileinfo_pricing1 ul li:nth-child(2){
+.agileinfo_pricing1 ul li:nth-child(2){
 	text-align:right;
 }
 .agileinfo_pricing1 ul:nth-child(3){
 	margin:.5em 0;
 }
-.agileinfo_pricing1 ul:nth-child(5){
-	margin:.1 0 0;
-}
+
+/*
 .agileinfo_pricing1 ul:nth-child(5) li i{
 	transform: rotate(180deg);
 	-webkit-transform: rotate(180deg);

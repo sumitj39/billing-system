@@ -134,6 +134,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				}
 				var ch = document.getElementById('catalogue'+String(count));
 				ch.parentNode.removeChild(ch);
+				document.getElementById('totalItems').value = String(Number(count)-1);
+				//getTotal();
+				return;
 			}
 			function getTotal(){
 				var sum=0;
