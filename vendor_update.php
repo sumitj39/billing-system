@@ -6,6 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        echo("HELLO");
         require('db_connection.php');
         $vendor_id = $_POST['vendor_id'];
         $vendor_fullname=$_POST['vendor_fullname'];

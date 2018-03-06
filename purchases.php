@@ -39,6 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="agileinfo_pricing" style="width:80%">
             <div class="agileinfo_pricing1">
                 <h3 ><a href="purchase_form.php">New Purchase </a></h3>
+                <h3 ><a href="product_form.php">Add New Product </a></h3>
                 <h3><a href="inventory.php">View Inventory </a></h3>
                 <h3>Information</h3>
                 <?php

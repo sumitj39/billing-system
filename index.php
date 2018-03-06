@@ -54,6 +54,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<p>Billing System project</p>
 		</div>
 	</div>
+
+    <div class="olia-gozha" style="margin-top:100px;	">
+        <div class="olia-left">
+            <div class="wrap">
+                <ul>
+                    <p>Created By:<p>
+                </ul>
+                    <p>Supriya Jogalekar<span>@suppi</span></p>
+                    <p>Sumit Jogalekar<span>@summi</span></p>
+            </div>
+        </div>
+        <div class="olia-right">
+            <p>Chidambar Electricals, KC Road<span>Hanagal, Karnataka 581104</span></p>
+            <h4>+91-9448745754</h4>
+            <p><a href="mail-to:sample@example.com">info@cew.com</a><span><a href="mail-to:sample@example.com">partnership@cew.com</a></span></p>
+        </div>
+        <div class="clearfix" style="background: #f2f2f2;"></div>
+    </div>
 </div>
 
 <div class="footer">
