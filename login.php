@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$result = mysqli_query($conn,"SELECT * FROM `admin` WHERE `admin_name`='$username'");
 
 	$errmsg="";
-	if(!result){
+	if(!$result){
 		$errmsg = $errmsg."Incorrect username or password ";
 	}
 	$row  = mysqli_fetch_array($result);

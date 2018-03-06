@@ -20,14 +20,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <!-- js -->
-<script src="js/jquery-1.11.3.min.js"></script>
+<script src="templates/js/jquery-1.11.3.min.js"></script>
 <!-- //js -->
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="templates/css/font-awesome_customers.min.css" />
 <!-- //font-awesome icons -->
 <link rel="stylesheet" type="text/css" href="templates/css/easy-responsive-tabs_customers.css " />
 <link href="templates/css/style_customers.css" rel="stylesheet" type="text/css" media="all" />
-<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 <!--extra ones -->
 <link href="templates/css/style_index.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -38,7 +38,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h1>Purchase dashboard</h1>
         <div class="agileinfo_pricing" style="width:80%">
             <div class="agileinfo_pricing1">
-                <h3><a href="purchase_form.php">New Purchase </a></h3>
+                <h3 ><a href="purchase_form.php">New Purchase </a></h3>
+                <h3><a href="inventory.php">View Inventory </a></h3>
                 <h3>Information</h3>
                 <?php
 require "db_connection.php";
@@ -67,6 +68,10 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         <?php echo ($row['purchase_qty']); ?>
                         <span><?php echo ($row['purchase_date']); ?></span>
                     </li>
+                    <li>
+						<a href='#' style="padding: 4px 10px;background: blueviolet;">edit</a>
+						<a href='#' style="padding: 4px 10px;">delete</a>
+					</li>
                 </ul>
                 <?php
 }
@@ -77,6 +82,6 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             <p>© 2017 Hotel Catalogue Widget. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
         </div>
     </div>
-<script src="js/easyResponsiveTabs.js"></script>
+<script src="templates/js/easyResponsiveTabs.js"></script>
 </body>
 </html>

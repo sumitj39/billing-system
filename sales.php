@@ -51,6 +51,8 @@ $cust_nameobj = mysqli_query($conn,$fetch_name_query);
 $cust_nameobj = mysqli_fetch_array($cust_nameobj,MYSQLI_BOTH);
 $cust_name = $cust_nameobj["customer_name"];
 ?>
+
+				<!--ul><a><span>edit</span></a></ul-->
 				<ul class="w3_agile_price">
 					<li>
                         <i class="fa fa-line-chart" aria-hidden="true"></i>
@@ -61,6 +63,10 @@ $cust_name = $cust_nameobj["customer_name"];
                         Total Amt
 						<?php echo " ".($row['total']); ?>
 						<span>bill_id<?php echo " ".($row['bill_id']); ?></span>
+					</li>
+					<li>
+						<a href='#' style="padding: 4px 10px;background: blueviolet;">edit</a>
+						<a href='#' style="padding: 4px 10px;">delete</a>
 					</li>
 				</ul>
 <?php

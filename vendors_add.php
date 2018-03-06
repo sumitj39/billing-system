@@ -1,4 +1,4 @@
-!--A Design by W3layouts
+<!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -43,30 +43,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="main">
 					<div class="form-left-w3l">
 
-						<input type="text" class="top-up" id="fullName" name="fullName" placeholder="Full Name" required="">
+						<input type="text" class="top-up" id="vendor_fullname" name="vendor_fullname" placeholder="Full Name" required="">
 					</div>
 					<div class="form-right-w3ls ">
 
-						<input type="text" class="top-up" name="Company" id= "Company" placeholder="Compnay" required="">
+						<input type="text" class="top-up" name="vendor_company" id= "vendor_company" placeholder="Compnay" required="">
 						<div class="clearfix"></div>
 					</div>
 
 				</div>
 				<div class="main">
-						<div class="form-left-w3l">
+					<div class="form-left-w3l">
 
-								<input class="buttom" type="text" id="address" name="address" placeholder="Address" required="">
-								<div class="clearfix"></div>
-							</div>
-                            <div class="form-right-w3l">
-
-								<input class="buttom" type="text" id="email" name="email" placeholder="Email" required="">
-								<div class="clearfix"></div>
-							</div>
-					<div class="form-left-w3ls ">
-						<input id="contactno" name="contactno" type="text" placeholder="Contactno" required="">
+						<input type="text" class="top-up" id="vendor_email" name="vendor_email" placeholder="E-Mail" required="">
 					</div>
+					<div class="form-right-w3ls ">
 
+						<input type="text" class="top-up" name="vendor_contactno" id= "vendor_contactno" placeholder="Phone Number" required="">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="main">
+					<div class="form-control-w3l" style="width:100%">
+						<textarea name="vendor_address" id="vendor_address" placeholder="Address" required></textarea>
+					</div>
+					<div class="clearfix"></div>
 				</div>
 			</div>	
 			<div class="btnn">
@@ -74,9 +75,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</form>
 	</div>
-	
-	<!-- js -->
-
 </body>
 
 </html>

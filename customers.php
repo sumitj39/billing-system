@@ -59,6 +59,10 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         <?php echo ($row['customer_contactno']); ?>
                         <span><?php echo ($row['customer_balance']); ?></span>
                     </li>
+                    <li>
+						<a href='#' style="padding: 4px 10px;background: blueviolet;">edit</a>
+						<a href='#' style="padding: 4px 10px;">delete</a>
+					</li>
                 </ul>
                 <?php
 }

@@ -68,6 +68,10 @@ while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
 						<?php echo(" ".$qty); ?>
 						<span>Price<?php echo(" ".$product_price); ?></span>
 					</li>
+					<li>
+						<a href='#' style="padding: 4px 10px;background: blueviolet;">edit</a>
+						<a href='#' style="padding: 4px 10px;">delete</a>
+					</li>
                 </ul>
 <?php
 }
