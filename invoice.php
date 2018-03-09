@@ -84,7 +84,7 @@ if(1){
 				</tr>
 				<tr>
 					<th><span contenteditable>Amount Due</span></th>
-					<td><span id="prefix" contenteditable>$</span>
+					<td><span id="prefix" contenteditable>$</span>	
 					<span><?php echo $customer['customer_balance']?></span></td>
 				</tr>
 			</table>
@@ -116,7 +116,7 @@ if(1){
 						<td><a class="cut">-</a><span contenteditable><?php echo $product['product_name']?></span></td>
 						<td><span data-prefix>$</span><span contenteditable><?php echo $sale['sales_price']?></span></td>
 						<td><span contenteditable><?php echo $sale['sales_qty']; ?></span></td>
-						<td><span data-prefix>$</span><span>600.00</span></td>
+						<td><span data-prefix>$</span><span><?PHP echo (int)$sale['sales_qty']*(int)$sale['sales_price']; ?></span></td>
 					</tr>
 				</tbody>
 					<?php } ?>
@@ -125,23 +125,17 @@ if(1){
 			<table class="balance">
 				<tr>
 					<th><span contenteditable>Total</span></th>
-					<td><span data-prefix>$</span><span>600.00</span></td>
+					<td><span data-prefix>$</span><span><?php echo$bill['total'] ?></span></td>
 				</tr>
 				<tr>
-					<th><span contenteditable>Amount Paid</span></th>
-					<td><span data-prefix>$</span><span contenteditable>0.00</span></td>
+					<th><span contenteditable>GST</span></th>
+					<td><span contenteditable>18</span><span data-prefix>%</span></td>
 				</tr>
 				<tr>
-					<th><span contenteditable>Balance Due</span></th>
-					<td><span data-prefix>$</span><span>600.00</span></td>
+					<th><span contenteditable>Sum</span></th>
+					<td><span data-prefix>$</span><span><?php echo $bill['total']+(int)$bill['total']*0.18; ?></span></td>
 				</tr>
 			</table>
 		</article>
-		<aside>
-			<h1><span contenteditable>Additional Notes</span></h1>
-			<div contenteditable>
-				<p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
-			</div>
-		</aside>
 	</body>
 </html>

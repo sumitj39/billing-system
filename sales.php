@@ -66,7 +66,7 @@ $cust_name = $cust_nameobj["customer_name"];
 					</li>
 					<li>
 						<a href='#' style="padding: 4px 10px;background: blueviolet;">edit</a>
-						<a href='#' style="padding: 4px 10px;">delete</a>
+						<a href="invoice.php?bill_id=<?php echo $row['bill_id']?>" style="padding: 4px 10px;">Generate Invoice</a>
 					</li>
 				</ul>
 <?php

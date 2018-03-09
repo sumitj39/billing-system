@@ -39,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $bill_id = mysqli_insert_id($conn);
         echo($bill_id."<br>");
         for($i=1;$i<=$totalItems;$i++){
-            $prodName = (int)$_POST["itemName".$i];
+            $prodName = $_POST["itemName".$i];
             $prodPrice = (int)$_POST["itemPrice".$i];
-            $ans=mysqli_query($conn, "select `product_id` from `product` where `product_name`={$prodName}");
+            $ans=mysqli_query($conn, "select `product_id` from `product` where `product_name`='$prodName'");
             if(! $ans){
                 die("Product does not exist in database");
             }
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             echo($sales_insert_query."<br>");
             $result = mysqli_query($conn, $sales_insert_query);
             if(!$result){
-                die("Could   addsfa Not execute query. error".mysqli_error());
+                die("Could  Not execute query. error".mysqli_error());
             }
         }
     }
