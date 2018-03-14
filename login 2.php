@@ -70,7 +70,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="clear"></div>
 				</div>
 				<div class="submit">
-					<a href="forgot_password.php">forgot password</a>
+					<a href="frmForgot.php">forgot password</a>
 						<input type="submit" value="SIGN IN" >
 				</div>
 					<h5>Don't have an account ?<a href="signup.php"> Sign Up </a></h5>
